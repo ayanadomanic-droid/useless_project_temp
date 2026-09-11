@@ -1,1 +1,152 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+
+    <title>Useless Weather Report</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #eaf6ff;
+            padding: 40px;
+        }
+
+        .box {
+            background: white;
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        input {
+            padding: 12px;
+            margin: 7px;
+            border-radius: 8px;
+            border: 1px solid gray;
+        }
+
+        button {
+            padding: 12px 20px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .report {
+            margin-top: 25px;
+            line-height: 2;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="box">
+
+        <h1>🌦️ Useless Weather Report</h1>
+
+        <p>
+            The solution that nobody asked for.
+        </p>
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="city"
+                placeholder="City"
+                required
+            >
+
+            <br>
+
+            <input
+                type="number"
+                name="temperature"
+                placeholder="Temperature °C"
+                required
+            >
+
+            <br>
+
+            <input
+                type="text"
+                name="condition"
+                placeholder="Weather condition"
+                required
+            >
+
+            <br><br>
+
+            <button type="submit">
+                Generate Useless Report
+            </button>
+
+        </form>
+
+
+        {% if report %}
+
+        <div class="report">
+
+            <h2>📍 {{ report.city }}</h2>
+
+            <p>
+                🌡️ Temperature:
+                {{ report.temperature }}°C
+            </p>
+
+            <p>
+                ☁️ Condition:
+                {{ report.condition }}
+            </p>
+
+            <hr>
+
+            <h2>🤡 Useless Analysis</h2>
+
+            <p>
+                🎭 Drama Level:
+                {{ report.drama }}
+            </p>
+
+            <p>
+                😴 Motivation:
+                {{ report.motivation }}
+            </p>
+
+            <p>
+                🐸 Frog Activity:
+                {{ report.frog }}
+            </p>
+
+            <p>
+                💬 {{ report.message }}
+            </p>
+
+            <h3>
+                🚪 Should I Go Outside?
+            </h3>
+
+            <p>
+                Probably not. 🛌
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
