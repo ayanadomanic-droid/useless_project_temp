@@ -6,30 +6,30 @@
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: [STRAY KIDS]
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
+- Team Lead: [Ayana Anna Domanic] - [ICCS college of engineering&management]
+- Member 2: [Devi Theertha VK] - [ICCS college of engineering&management]
 - Member 3: [Name] - [College]
 
 ### Project Description
-[2-3 lines about what your project does]
+[Weather app tells you what the weather is. Our app tells you the weather dramatically]
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+[Boring weather reports]
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+[Ordinary weather report turns into completely unnecessary information like drama level]
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- [python]
+- [no Frameworks]
+- [python standard library]
+- [VS code]
 
 For Hardware:
 - [List main components]
