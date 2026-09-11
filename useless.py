@@ -5,13 +5,25 @@ print("       🌦️ USELESS WEATHER REPORT")
 print("===================================")
 
 # Get information from the user
-city = input("Enter your city: ")
+city = input("Enter your city: ").strip()
 
-temperature = float(input("Enter temperature in °C: "))
+while True:
+    try:
+        temperature = float(input("Enter temperature in °C: "))
+        break
+    except ValueError:
+        print("Please enter a valid number for temperature.")
 
-condition = input("Enter weather condition: ").lower()
+condition = input("Enter weather condition: ").strip().lower()
 
-humidity = int(input("Enter humidity (%): "))
+while True:
+    try:
+        humidity = int(input("Enter humidity (%): "))
+        if 0 <= humidity <= 100:
+            break
+        print("Humidity must be between 0 and 100.")
+    except ValueError:
+        print("Please enter a valid whole number for humidity.")
 
 
 print("\nGenerating completely useless information...")
@@ -53,10 +65,10 @@ else:
 # FROG ACTIVITY
 # -----------------------------------
 
-if "rain" in condition:
+if "rain" in condition or humidity > 80:
     frog = "EXTREMELY HIGH 🐸"
 
-elif "cloud" in condition:
+elif "cloud" in condition or humidity > 50:
     frog = "Probably plotting 🐸"
 
 else:

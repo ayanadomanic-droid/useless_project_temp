@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request
+import os
 import random
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -8,12 +9,23 @@ app = Flask(__name__)
 def home():
 
     report = None
+    error = None
 
     if request.method == "POST":
 
-        city = request.form["city"]
-        temperature = float(request.form["temperature"])
-        condition = request.form["condition"].lower()
+        city = request.form.get("city", "").strip()
+        temperature_raw = request.form.get("temperature", "").strip()
+        condition = request.form.get("condition", "").strip().lower()
+
+        if not city or not temperature_raw or not condition:
+            error = "Please fill in all fields."
+            return render_template("index.html", report=report, error=error)
+
+        try:
+            temperature = float(temperature_raw)
+        except ValueError:
+            error = "Temperature must be a number."
+            return render_template("index.html", report=report, error=error)
 
         # Drama level
         if temperature > 35:
@@ -56,8 +68,9 @@ def home():
             "message": message
         }
 
-    return render_template("index.html", report=report)
+    return render_template("index.html", report=report, error=error)
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)

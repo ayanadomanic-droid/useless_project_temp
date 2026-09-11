@@ -93,6 +93,11 @@
 
         </form>
 
+        {% if error %}
+        <p style="color: #b00020; font-weight: bold;">
+            ⚠️ {{ error }}
+        </p>
+        {% endif %}
 
         {% if report %}
 
